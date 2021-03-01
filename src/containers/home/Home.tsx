@@ -102,6 +102,8 @@ const Home:React.FC = () =>{
     useEffect(()=>{
         dispatch(cartRequest())
     },[dispatch]);
+
+    console.log("13143434");
     return(
         <main >
             <Banner>
