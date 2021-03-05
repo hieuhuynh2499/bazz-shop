@@ -4,11 +4,11 @@ export const cartRequest = () => {
     };
   };
 
-  export const cartSuccess = () => {
+  export const cartSuccess = (action:any) => {
     return {
       type: 'CART_SUCCESS',
       payload:{
-        listProducts:[]
+        listProducts:action
       }
     };
   };

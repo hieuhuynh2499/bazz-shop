@@ -93,9 +93,7 @@ const listBlog = [
 
 
 const Home:React.FC = () =>{
-    const listProducts = useSelector((state:any) => state.addtocart.listProducts);
-    const listProducts1 = useSelector((state:any) => state.addtocart);
-    console.log(listProducts1);
+    const listProducts = useSelector((state:any) => state.cart.listProducts);
     const dispatch = useDispatch();
 
 
@@ -116,13 +114,13 @@ const Home:React.FC = () =>{
                 <Container>
                     <Grid container spacing={5} justify="center"
                         alignItems="center"> 
-                        <Grid item lg={5} md={6}>
+                        <Grid item lg={5} md={6} sm={12}>
                             <img src={h1_img_1} alt="" width="100%"/>
                         </Grid>
-                        <Grid item lg={3} md={4}>
+                        <Grid item lg={3} md={4} sm={12}>
                             <img src={h1_img_2} alt="" width="100%" />
                         </Grid>
-                        <Grid item lg={4} md={4}>
+                        <Grid item lg={4} md={4} sm={12}>
                             <ColectionText>
                                 <TitleHome> New Arrivals</TitleHome>
                                 <h3>NEW COLLECTION</h3>
@@ -146,19 +144,19 @@ const Home:React.FC = () =>{
                     }
                 </LogoSlider>
             </section>
-            <HomeNew>
+             <HomeNew>
                 <Grid container spacing={1}>
-                    <Grid item lg={6}>
+                    <Grid item md={12} lg={6}>
                         <HomeNewContainer>
                             <img src={img_1} alt=""  className="img-new-background"/>
                             <div>
-                                <img src={img_1_text} alt="" className="img-new-text"/>
+                                <img src={img_1_text} width="100%" alt="" className="img-new-text"/>
                                 <button>show now</button>
                             </div>
                         </HomeNewContainer>
                     </Grid>
-                    <Grid item  lg={6}>
-                    <HomeNewContainer>
+                    <Grid item md={12} lg={6}>
+                        <HomeNewContainer>
                             <img src={img_2} alt="" width="100%" className="img-new-background"/>
                             <div>
                                 <img src={img_2_text} alt=""width="100%" className="img-new-text"/>
@@ -168,7 +166,7 @@ const Home:React.FC = () =>{
                     </Grid>
                 </Grid>
             </HomeNew>
-            <section style={{padding:"50px 0px"}}>
+              <section style={{padding:"50px 0px"}}>
                 <Container>
                    <HomeProductsTitle>
                         <TitleHome>
@@ -180,7 +178,7 @@ const Home:React.FC = () =>{
                    <Grid container spacing={3}>
                        {
                            listProducts.map((item:productItem,index:number)=>(
-                            <Grid item lg={3} key={index}>
+                            <Grid item lg={3} md={4} sm={6} xs={12} key={index}>
                                 <Product product={item} />
                             </Grid>
                            ))
@@ -188,7 +186,7 @@ const Home:React.FC = () =>{
                    </Grid>
                 </Container>
             </section>
-            <VideoBack>
+          <VideoBack>
                     <div>
                         <img src={video_btn} alt=""/>
                     </div>
@@ -215,7 +213,7 @@ const Home:React.FC = () =>{
                         <Grid container spacing={2}>
                            {
                                listBlog.map((blog,index)=>(
-                                   <Grid item lg={4} key={index} >
+                                   <Grid item lg={4} md={6} sm={6} xs={12} key={index} >
                                        <BlogHomeItem blog={blog}/>
                                    </Grid>
                                ))

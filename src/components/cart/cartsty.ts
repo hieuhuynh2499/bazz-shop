@@ -1,5 +1,8 @@
 import styled from 'styled-components';
 
+interface ShowCartContainer {
+    display:string
+}
 
 export const CartContainer = styled.div`
     position:absolute;
@@ -10,7 +13,9 @@ export const CartContainer = styled.div`
     background-color:#fff;
     box-sizing:border-box;
     padding:10px;
+    display:${(props:ShowCartContainer) => props.display};
 `;
+
 export const CartItemContainer = styled.div`
     height:280px;
     overflow: auto;
@@ -58,6 +63,14 @@ export const CartItemcontent = styled.div`
         position:absolute;
         top:30px;
         right:20px;
+        cursor:pointer;
+    }
+    p{
+        display:inline-flex;
+        flex-direction:column-reverse;
+        position:absolute;
+        top:0px;
+        left:75px;
     }
 `;
 

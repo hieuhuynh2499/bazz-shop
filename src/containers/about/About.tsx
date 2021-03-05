@@ -82,7 +82,7 @@ const About:React.FC = () =>{
                     <Grid container spacing={3}>
                             {
                                listBlog.map((blog,index)=>(
-                                   <Grid item lg={4} key={index} >
+                                   <Grid item lg={4} md={6} sm={6} xs={12} key={index} >
                                        <BlogHomeItem blog={blog}/>
                                    </Grid>
                                ))

@@ -1,7 +1,7 @@
-import { Grid } from '@material-ui/core';
+import { AppBar, Grid, Toolbar } from '@material-ui/core';
 import styled from 'styled-components';
 
-export const HeaderContainer = styled.header`
+export const HeaderContainer = styled.div`
     min-height:62px;
     background-color:#fff;
     display:flex;
@@ -63,7 +63,10 @@ export const UlContainer = styled.ul`
         margin-right:20px;
         a{
             text-decoration:none;
-            text-transform:uppercase;
+            font-size: 15px;
+            font-weight: 700;
+            line-height: 1.1em;
+            text-transform: uppercase;
             color:#000;
         }
     }
@@ -88,5 +91,20 @@ export const Cart = styled(Grid)`
     h3{
         margin-left:10px;
         text-transform: uppercase;
+    }
+`;
+
+export const AppbarContainer = styled(AppBar)`
+    
+    .MuiAppBar-colorPrimary{
+    background-color:#fff;
+    color:#000;
+    }
+`;
+
+export const ToobarContainer = styled(Toolbar)`
+    display:block;
+    .MuiToolbar-gutters{
+        padding:0;
     }
 `;

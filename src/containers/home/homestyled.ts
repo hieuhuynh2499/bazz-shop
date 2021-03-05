@@ -42,10 +42,38 @@ export const Banner = styled.section`
             margin:0px;
         }
     }
+    @media screen and (max-width:700px){
+       div h2{
+            z-index: 7;
+            min-width: 311px;
+            max-width: 311px;
+            white-space: normal;
+            font-size: 40px;
+            line-height: 48px;
+            font-weight: 700;
+            color: rgb(255, 255, 255);
+            letter-spacing: 0px;
+            font-family: Roboto;
+            text-transform: uppercase;
+            visibility: inherit;
+            transition: none 0s ease 0s;
+            text-align: center;
+            border-width: 0px;
+            margin: 0px;
+            padding: 0px;
+            min-height: 148px;
+            max-height: 148px;
+            opacity: 1;
+            transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+            transform-origin: 50% 50% 0px;
+       }
+       
+    }
 `;
 
 export const ColectionHome = styled.section`
-    padding: 100px 0px;
+    padding: 100px 10px;
+
     
 `;
 
@@ -153,6 +181,7 @@ export const HomeNewContainer = styled.div`
     align-items:center;
     height:500px;
     overflow:hidden;
+    
     &:hover .img-new-background{
         transform:scale(1.1);
     }
@@ -161,8 +190,8 @@ export const HomeNewContainer = styled.div`
         top:0;
         left:0;
         z-index:-1;
-        width:100%;
         height:100%;
+        width:100%;
         transition:all .3s ease;
     }
     div button{
@@ -184,6 +213,10 @@ export const HomeNewContainer = styled.div`
             background-color:#fff;
             color:#000;
         }
+    }
+    @media screen and (max-width:500px){
+        height:300px;
+       
     }
 `;
 export const HomeProductsTitle = styled.div`
