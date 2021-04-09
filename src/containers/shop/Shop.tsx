@@ -3,6 +3,8 @@ import React from 'react';
 // import Product from '../../components/product/Product';
 import {H2Shop,UlShop,TitleShop} from './shopsty';
 import bannerImg from '../../images/banner-img-1.jpg';
+import Product, { productItem } from '../../components/product/Product';
+import { useSelector } from 'react-redux';
 
 
 
@@ -46,12 +48,16 @@ const listUl = [
     }
 ]
 const Shop:React.FC = () =>{
+    const listProducts = useSelector((state:any) => state.cart.listProducts);
+   
     return(
         <main>
             <TitleShop>
                 <Container>
-                    <h5>Home  /  Product List  /  Left Sidebar</h5>
-                    <h3>LEFT SIDEBAR</h3>
+
+                        <h5>Home  /  Product List  /  Left Sidebar</h5>
+                        <h3>LEFT SIDEBAR</h3>
+
                 </Container>
             </TitleShop>
             <section>
@@ -73,7 +79,13 @@ const Shop:React.FC = () =>{
                         </Grid>
                         <Grid item lg={9}>
                             <Grid container spacing={2}>
-                           
+                            {
+                                listProducts.map((item:productItem,index:number)=>(
+                                    <Grid item lg={4} md={4} sm={6} xs={12} key={index}>
+                                        <Product product={item} />
+                                    </Grid>
+                                ))
+                            }
                             </Grid>
                         </Grid>
                     </Grid>

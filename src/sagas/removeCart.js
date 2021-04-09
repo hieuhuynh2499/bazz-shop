@@ -7,8 +7,7 @@ import { fetchProduct } from "../untils/apiaxios";
 function* removeToCart(action) {
     try {
         let dataListAllTest = yield call(fetchProduct, action.id);
-        console.log(dataListAllTest);
-        console.log("remove");
+        console.log(dataListAllTest.data);
         if (dataListAllTest.data.id === action.id) {
             yield put(removecartSuccess(dataListAllTest.data));
         }

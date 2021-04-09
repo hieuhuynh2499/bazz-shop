@@ -4,9 +4,10 @@ import cartReducer from "./cart";
 
 
 
+
 const rootReducer = combineReducers({
     cart: cartReducer,
-    addtocart: addtocartReducer
+    addtocart: addtocartReducer,
 });
 
 

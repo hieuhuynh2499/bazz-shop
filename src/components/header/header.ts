@@ -45,10 +45,13 @@ export const CartWishList = styled.h3`
 export const CartShop = styled.h3`
     font-size:14px;
     cursor:pointer;
+  
+  
 `;
 export const Bars = styled.h3`
     display:none;
     font-size:25px;
+    
     @media screen and (max-width:1280px){
        display:inline;
        margin:10px 0px 0px;

@@ -20,7 +20,6 @@ const Product:React.FC<productInterface> = ({product={}}) => {
     const {name,price,image,id} = product;
     const addToCart = (id:any) =>{
         dispatch(addtocartRequest(id));
-        
     }
  
     return(

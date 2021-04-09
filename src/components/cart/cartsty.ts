@@ -1,24 +1,37 @@
 import styled from 'styled-components';
 
-interface ShowCartContainer {
-    display:string
-}
+
 
 export const CartContainer = styled.div`
-    position:absolute;
-    top:62px;
-    right:20px;
-    height:400px;
-    width :300px;
+    position:fixed;
+    top:0px;
+    right:0px;
+    height:100vh;
+    width :380px;
     background-color:#fff;
     box-sizing:border-box;
-    padding:10px;
-    display:${(props:ShowCartContainer) => props.display};
-`;
+    padding:20px 20px 40px 40px;
+    display:none;
+    &.Close{
+        display:block;
+    }
 
+`;
+export const CloseX = styled.div`
+    display:flex;
+    justify-content:flex-end;
+    height:80px;
+    svg{
+        font-size:20px;
+    }
+`;
+export const CartContaienerBtn = styled.div`
+    
+`;
 export const CartItemContainer = styled.div`
-    height:280px;
     overflow: auto;
+    height:70vh;
+    max-height:70vh;
     &::-webkit-scrollbar {
         width: 5px;
         }
@@ -71,6 +84,9 @@ export const CartItemcontent = styled.div`
         position:absolute;
         top:0px;
         left:75px;
+        & span{
+            cursor:pointer;
+        }
     }
 `;
 

@@ -14,6 +14,7 @@ import CartHeader from "../cart/Cart";
 
 
 import useScrollTrigger from '@material-ui/core/useScrollTrigger';
+import { useSelector } from 'react-redux';
 
 interface Props {
     /**
@@ -25,7 +26,7 @@ interface Props {
   }
 
 const Header:React.FC<Props> = (props) =>{
-
+    const listProducts = useSelector((state:any) => state.addtocart.listProducts);
     const [barsClick,setBarsClick] = useState(false);
     const [cart,setCart] = useState(false);
     const showBars = () =>{
@@ -34,7 +35,6 @@ const Header:React.FC<Props> = (props) =>{
     const showCart = () => {
         setCart(!cart);
     }
-   
 function ElevationScroll(props: Props) {
     const { children, window } = props;
     // Note that you normally won't need to set the window ref as useScrollTrigger
@@ -87,12 +87,11 @@ function ElevationScroll(props: Props) {
                             <Cart>
                                 <CartWishList><FiHeart/> wishist</CartWishList>
                                 <CartShop  onClick={showCart}>
-                                    <FiShoppingCart/> <span>cart(0)</span>
-                                
+                                    <FiShoppingCart/> <span>cart({listProducts.length})</span>
                                 </CartShop>
                                 <Bars onClick={showBars}><FaBars/></Bars>
                                 {
-                                        <CartHeader display={cart ? "block":"none"} /> 
+                                        <CartHeader showCart={cart} showCartFc={showCart} /> 
                                 }
                             </Cart>
                         </Grid>

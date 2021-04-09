@@ -27,9 +27,10 @@ export const UlShop = styled.ul`
 `;
 
 export const TitleShop = styled.section`
-    height: 145px;
+    height: 245px;
     background-color: #f6f6f6;
     padding:50px;
+    padding-top:100px;
     box-sizing:border-box;
     margin-bottom:50px;
     h3{

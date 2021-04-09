@@ -94,6 +94,7 @@ const listBlog = [
 
 const Home:React.FC = () =>{
     const listProducts = useSelector((state:any) => state.cart.listProducts);
+    listProducts.splice(8, 2);
     const dispatch = useDispatch();
 
 
